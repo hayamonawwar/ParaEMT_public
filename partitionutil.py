@@ -105,7 +105,8 @@ def admittance_to_BBD(A, num_parts=4):
     t10 = time.time()
 
     index_order = np.array(index_order) - 1
-    final_matrix = org_matrix[index_order[:,None],index_order]
+    #final_matrix = org_matrix[index_order[:,None],index_order]
+    final_matrix = org_matrix.tocsr()[index_order[:, None], index_order]
 
     t11 = time.time()
 

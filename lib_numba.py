@@ -124,8 +124,8 @@ def numba_InitNet(
     N1 = nbus
     N2 = nbus * 2
     Init_net_N = nbus * 3
-    # Init_net_G0 = np.zeros((Init_net_N, Init_net_N))
-    # Init_net_G0 = sp.dok_matrix((Init_net_N, Init_net_N),dtype=float)
+    Init_net_G0 = np.zeros((Init_net_N, Init_net_N))
+    Init_net_G0 = sp.dok_matrix((Init_net_N, Init_net_N),dtype=float)
     if loadmodel_option == 1:
         nentries = 12 * len(line_from) + 12 * len(xfmr_from) + 3 * len(load_bus) + 3 * len(shnt_bus) + 3 * len(
             shnt_sw_bus)
