@@ -50,11 +50,12 @@ class bbd_matrix:
             err_str = "Dimension of row {} is set at {} but given array has {} rows"
             assert self.block_sizes[row] == p, err_str.format(row, self.block_sizes[row], p)
         else:
-            assert p > 0, "Dimension of column {} given as {}. Must be > 0.".format(row, p)
-            self.dimension += p
-            self.block_sizes[row] = p
-            if len(self.block_sizes) == self.block_dim:
-                self.complete = True
+            pass
+            # assert p > 0, "Dimension of column {} given as {}. Must be > 0.".format(row, p)
+            # self.dimension += p
+            # self.block_sizes[row] = p
+            # if len(self.block_sizes) == self.block_dim:
+            #     self.complete = True
         return
 
     def _check_col_size(self, col, q):
@@ -62,11 +63,12 @@ class bbd_matrix:
             err_str = "Dimension of column {} is set at {} but given array has {} columns"
             assert self.block_sizes[col] == q, err_str.format(col, self.block_sizes[col], q)
         else:
-            assert q > 0, "Dimension of column {} given as {}. Must be > 0".format(col, q)
-            self.dimension += q
-            self.block_sizes[col] = q
-            if len(self.block_sizes) == self.block_dim:
-                self.complete = True
+            pass
+            # assert q > 0, "Dimension of column {} given as {}. Must be > 0".format(col, q)
+            # self.dimension += q
+            # self.block_sizes[col] = q
+            # if len(self.block_sizes) == self.block_dim:
+            #     self.complete = True
         return
 
     def add_diag_block(self, block_mat, idx):
@@ -234,6 +236,11 @@ class bbd_matrix:
 
         total_nnz = corner_nnz
         min_block_size = 2**63 - 1
+        # `min_block_nnz` is a variable in the `summarize` method of the `bbd_matrix` class that is
+        # used to store the minimum number of non-zero elements in any block matrix within the BBD
+        # matrix. It is initialized to a very large value (`2**63 - 1`) at the beginning of the method
+        # and then updated as the method iterates over the block matrices to find the block with the
+        # smallest number of non-zero elements.
         min_block_nnz = 2**63 - 1
         max_block_size = 0
         max_block_nnz = 0
