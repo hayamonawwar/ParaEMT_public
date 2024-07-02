@@ -23,7 +23,7 @@ from psutils import *
 
 from preprocessscript import get_json_pkl
 
-workingfolder = '.'
+workingfolder = '/home/hantao/Desktop/ParaEMT_public'
 os.chdir(workingfolder)
 
 def main():

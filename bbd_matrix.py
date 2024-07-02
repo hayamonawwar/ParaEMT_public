@@ -50,12 +50,12 @@ class bbd_matrix:
             err_str = "Dimension of row {} is set at {} but given array has {} rows"
             assert self.block_sizes[row] == p, err_str.format(row, self.block_sizes[row], p)
         else:
-            pass
-            # assert p > 0, "Dimension of column {} given as {}. Must be > 0.".format(row, p)
-            # self.dimension += p
-            # self.block_sizes[row] = p
-            # if len(self.block_sizes) == self.block_dim:
-            #     self.complete = True
+            # pass
+            assert p > 0, "Dimension of column {} given as {}. Must be > 0.".format(row, p)
+            self.dimension += p
+            self.block_sizes[row] = p
+            if len(self.block_sizes) == self.block_dim:
+                self.complete = True
         return
 
     def _check_col_size(self, col, q):
@@ -63,12 +63,12 @@ class bbd_matrix:
             err_str = "Dimension of column {} is set at {} but given array has {} columns"
             assert self.block_sizes[col] == q, err_str.format(col, self.block_sizes[col], q)
         else:
-            pass
-            # assert q > 0, "Dimension of column {} given as {}. Must be > 0".format(col, q)
-            # self.dimension += q
-            # self.block_sizes[col] = q
-            # if len(self.block_sizes) == self.block_dim:
-            #     self.complete = True
+            # pass
+            assert q > 0, "Dimension of column {} given as {}. Must be > 0".format(col, q)
+            self.dimension += q
+            self.block_sizes[col] = q
+            if len(self.block_sizes) == self.block_dim:
+                self.complete = True
         return
 
     def add_diag_block(self, block_mat, idx):

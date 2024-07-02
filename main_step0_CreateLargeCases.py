@@ -31,7 +31,7 @@ os.environ['PATH'] += ';' + os_path_PSSE
 import psse34
 import psspy
 
-workingfolder = "C:\\Users\\mxiong3\\Desktop\\ParaEMT_public\\"
+workingfolder = 'home/hantao/desktop/ParaEMT_public'
 os.chdir(workingfolder)
 
 import json
@@ -39,7 +39,7 @@ import pickle
 from Lib_BW_CreateLargeCases import *
 
 def main_2():
-    systemN = 5
+    systemN = 6
 
     psspy.psseinit()
     # load PSS/E model
